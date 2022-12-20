@@ -1,6 +1,17 @@
 // save reference to important DOM elements
 var timeDisplayEl = $('#time-display');
 
+/* different variables for modal window */
+var modalSubmit = document.getElementById("formInput");
+var projectName = document.getElementById("projName");
+var projectType = document.getElementById("projType");
+var projDueDate = document.getElementById("projDueDate");
+
+/* global variables to place values from modal window */
+var projName;
+var type;
+var dueDate;
+
 // handle displaying the time
 function displayTime() {
   var rightNow = dayjs().format('MMM DD, YYYY [at] hh:mm:ss a');
@@ -25,3 +36,10 @@ function saveProjectsToStorage(projects) {
 }
 
 displayTime();
+
+/* click event */
+modalSubmit.addEventListener("click", function() {
+  projName = projectName.value;
+  type = projectType.value;
+  dueDate = projDueDate.value;
+});
