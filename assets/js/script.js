@@ -2,10 +2,10 @@
 var timeDisplayEl = $('#time-display');
 
 // handle displaying the time
-function displayTime() {
+setInterval(function() {
   var rightNow = dayjs().format('MMM DD, YYYY [at] hh:mm:ss a');
   timeDisplayEl.text(rightNow);
-}
+},1000);
 
 // Reads projects from local storage and returns array of project objects.
 // Returns an empty array ([]) if there aren't any projects.
@@ -25,8 +25,3 @@ function saveProjectsToStorage(projects) {
 }
 
 // ADDING MY ADDITIONS HERE
-displayTime();
-
-$( function() {
-  $( "#datepicker" ).datepicker();
-} );

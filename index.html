@@ -10,7 +10,7 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
@@ -25,12 +25,30 @@
     <main class="container-fluid">
 
       <!-- Instructions Card -->
-      <div class="card" style="width: 24rem;">
-        <div class="card-body">
-          <h5 class="card-title">Instructions</h5>
-          <p class="card-text">This is a project tracker. You will have to enter the name of the project with its type (using the drop-down).</p>
-          <p class="card-text">Be sure to include the date the project is due (use the date input type).</p>
-          <button type="button" data-bs-toggle="modal" data-bs-target="#myModal">Add Project</button>
+      <div class="row">
+        <div class="col-4 card">
+          <div class="card-body">
+            <h5 class="card-title">Instructions</h5>
+            <p class="card-text">This is a project tracker. You will have to enter the name of the project with its type (using the drop-down).</p>
+            <p class="card-text">Be sure to include the date the project is due (use the date input type).</p>
+            <button type="button" data-bs-toggle="modal" data-bs-target="#myModal">Add Project</button>
+          </div>
+        </div>
+
+      <!-- Table for the added projects -->
+        <div class="col-8">
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Project name</th>
+                <th scope="col">Project type</th>
+                <th scope="col">Due date</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            </tbody>
+          </table>
         </div>
       </div>
 
@@ -59,7 +77,6 @@
           </div>
         </div>
       </div>
-
 
 
 
