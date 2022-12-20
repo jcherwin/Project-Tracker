@@ -5,7 +5,7 @@ var timeDisplayEl = $('#time-display');
 var modalSubmit = document.getElementById("formInput");
 var projectName = document.getElementById("projName");
 var projectType = document.getElementById("projType");
-var projDueDate = document.getElementById("projDueDate");
+var projDueDate = document.getElementById("datepicker");
 
 /* global variables to place values from modal window */
 var projName;
