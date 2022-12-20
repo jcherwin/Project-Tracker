@@ -15,6 +15,8 @@ var projName;
 var projType;
 var projDueDate;
 
+const dateToday = dayjs();
+
 var timer = {
   start(){
     setInterval(() => { displayTime(); }, 1000);
@@ -56,18 +58,29 @@ function captureFormData(){
 
 function printProjectData(){
   tableBody.text('');
-  // If the project is past due, give the row a class so that the row for the project will have a light red background. 
-  // If the project is due today, give the row a class so that the row will have a light yellow background.
   var projectSet = readProjectsFromStorage();
+  
   for(var x in projectSet){  //goes over each array (1 table row each)
     var tableRow = $('<tr>');
     for(var y in projectSet[x]){  //goes through the contents of each array (fill out each table row)
+      var dateDue = projectSet[x][2];
+      dateDue = dayjs(dateDue);
+      var diffCheck = dateToday.diff(dateDue, "day", true);
+      //console.log(diffCheck);
+      if(diffCheck >= 1){
+        //apply light red bg class to tr
+        tableRow.addClass("tr-past-due");
+      }else if(diffCheck < 1 && diffCheck > -0.1){
+        //apply light yellow bg class to tr
+        tableRow.addClass("tr-due-today");
+      }
+      
       var tableData = $('<td>');
       tableData.text(projectSet[x][y]);
       //console.log(projectSet[x][y]);
       tableRow.append(tableData);
     }
-    tableRow.append();
+    //tableRow.append();
     tableBody.append(tableRow);
   }
 }
@@ -84,7 +97,7 @@ $( function() {
 projectSubmit.on("click", captureFormData);
 
 projectModal.on("hidden.bs.modal", function() {
-  //Adds a short timer to form reset so submit has time to capture data
+  //Adds a short timer to form reset so submit listener has time to capture data
   setTimeout(() => {
     projectForm[0].reset();
     printProjectData(); 
