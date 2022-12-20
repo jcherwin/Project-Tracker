@@ -10,7 +10,7 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
@@ -22,31 +22,87 @@
       </h2>
     </header>
     <main class="container-fluid">
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">Project name</th>
-            <th scope="col">Project type</th>
-            <th scope="col">Due date</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-        </tbody>
-      </table>
-    </main>
+      
+      <!--Bootstrap wrapper for Card and Table-->
+      <div class="row">
+        <!-- Instructions Card -->
+        <div class="col-4 card">
+          <div class="card-body">
+            <h5 class="card-title">Instructions</h5>
+            <p class="card-text">This is a project tracker. You will have to enter the name of the project with its type (using the drop-down).</p>
+            <p class="card-text">Be sure to include the date the project is due (use the date input type).</p>
+            <button type="button" data-bs-toggle="modal" data-bs-target="#myModal">Add Project</button>
+          </div>
+        </div>
+        <!-- Table for the added projects -->
+        <div class="col-8">
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Project name</th>
+                <th scope="col">Project type</th>
+                <th scope="col">Due date</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Modal Popout to add a new project -->
+      <div id="myModal" class="modal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Add Project</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form id="projForm">
+                <label for="projName" class="col-form-label">What is your project name:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="projName"
+                  id="projName" />
+                <label for="projType" class="col-form-label">What type of project is this:</label>
+                <input 
+                  type="text"
+                  class="form-control"
+                  name="projType"
+                  id="projType" />
+                <label for="projDueDate" class="col-form-label">What is the project due date:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="projDueDate" 
+                  id="datepicker"
+                  autocomplete="off" />
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="projSubmit">Submit Form</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
       integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
       crossorigin="anonymous"
     ></script>
     <script src="./assets/js/script.js"></script>
+    <script>
+
+    </script>
   </body>
 </html>
