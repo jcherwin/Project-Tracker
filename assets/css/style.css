@@ -1,0 +1,8 @@
+:root {
+    --darkblue: #2c3e50;
+  }
+  
+  .header {
+    background-color: var(--darkblue);
+    color: white;
+  }
