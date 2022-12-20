@@ -10,6 +10,7 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
@@ -22,7 +23,46 @@
       </h2>
     </header>
     <main class="container-fluid">
-        
+
+      <!-- Instructions Card -->
+      <div class="card" style="width: 24rem;">
+        <div class="card-body">
+          <h5 class="card-title">Instructions</h5>
+          <p class="card-text">This is a project tracker. You will have to enter the name of the project with its type (using the drop-down).</p>
+          <p class="card-text">Be sure to include the date the project is due (use the date input type).</p>
+          <button type="button" data-bs-toggle="modal" data-bs-target="#myModal">Add Project</button>
+        </div>
+      </div>
+
+      <!-- Modal Popout to add a new project -->
+      <div id="myModal" class="modal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Add Project</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <label for="projName">What is your project name: </label>
+                <input name="projName" id="projName" />
+                <label for="projType">What type of project is this: </label>
+                <input name="projType" id="projType" />
+                <label for="projDueDate">What is the project due date: </label>
+                <input name="projDueDate" id="datepicker" />
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="formInput">Submit Form</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
     </main>
 
     <script
@@ -36,6 +76,12 @@
       integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
       crossorigin="anonymous"
     ></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="./assets/js/script.js"></script>
+    <script>
+      $( function() {
+        $( "#datepicker" ).datepicker();
+      } );
+    </script>
   </body>
 </html>

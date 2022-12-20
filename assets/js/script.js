@@ -26,3 +26,7 @@ function saveProjectsToStorage(projects) {
 
 // ADDING MY ADDITIONS HERE
 displayTime();
+
+$( function() {
+  $( "#datepicker" ).datepicker();
+} );
