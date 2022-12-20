@@ -1,6 +1,14 @@
 // save reference to important DOM elements
 var timeDisplayEl = $('#time-display');
 
+var timer = {
+  start(){
+    this.timeoutID = setInterval(() => {
+      displayTime();
+    },1000);
+  },
+}
+
 // handle displaying the time
 function displayTime() {
   var rightNow = dayjs().format('MMM DD, YYYY [at] hh:mm:ss a');
@@ -25,4 +33,5 @@ function saveProjectsToStorage(projects) {
 }
 
 // ADDING MY ADDITIONS HERE
+timer.start();
 displayTime();
