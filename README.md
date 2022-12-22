@@ -14,4 +14,4 @@ This is a link to the project hosted on GitHub Pages: []()
 
 This image is an example of what to expect when viewing the complete webpage.
 
-![This is a working image of this project](assets/images/demo-screenshot.png)
+![This is a working image of this project](assets/images/demo-screenshot.gif)
