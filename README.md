@@ -8,7 +8,7 @@ This program utilizes different web development aspects such as: jQuery, jQueryU
 
 ## Link
 
-This is a link to the project hosted on GitHub Pages: []()
+This is a link to the project hosted on GitHub Pages: [https://jcherwin.github.io/Project-Tracker/](https://jcherwin.github.io/Project-Tracker/)
 
 ## Usage
 
